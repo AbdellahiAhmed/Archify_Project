@@ -195,8 +195,8 @@ export class AuthService {
   }
 
   getAuthHeaders(): { [key: string]: string } {
-    const token = this.getStoredToken();
-    return token ? { Authorization: `Bearer ${token}` } : {};
+    // Cookies are used for auth; return empty headers by default
+    return {};
   }
 
   // Check if user has access to premium content

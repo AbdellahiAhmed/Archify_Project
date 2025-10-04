@@ -174,6 +174,7 @@ export class LessonComponent implements OnInit, OnDestroy {
   currentTime = signal<string>('');
   private timeInterval: any;
   private vimeoPlayer?: Player;
+  pdfUrl: string | undefined = 'https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf';
 
   lesson = signal<Lesson | undefined>(undefined);
   currentLessonIndex = signal<number>(0);
