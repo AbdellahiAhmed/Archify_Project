@@ -54,7 +54,7 @@ interface Lesson {
           <div class="lg:col-span-3">
             <!-- Video Player -->
             <div *ngIf="lesson()?.type === 'video'" 
-                 class="bg-black rounded-lg overflow-hidden aspect-video relative mb-6" 
+                 class="bg-black rounded-lg overflow-hidden aspect-video relative mb-6 card" 
                  [style.background]="'linear-gradient(45deg, #1f2937 25%, transparent 25%), linear-gradient(-45deg, #1f2937 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #1f2937 75%), linear-gradient(-45deg, transparent 75%, #1f2937 75%)'"
                  [style.backgroundSize]="'20px 20px'"
                  [style.backgroundPosition]="'0 0, 0 10px, 10px -10px, -10px 0px'">
@@ -85,7 +85,7 @@ interface Lesson {
 
             <!-- PDF Viewer -->
             <div *ngIf="lesson()?.type === 'pdf'" 
-                 class="bg-white rounded-lg border aspect-[4/3] flex items-center justify-center mb-6">
+                 class="card aspect-[4/3] flex items-center justify-center mb-6">
               <div class="text-center text-gray-500">
                 <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
@@ -97,7 +97,7 @@ interface Lesson {
 
             <!-- Quiz Section -->
             <div *ngIf="lesson()?.type === 'quiz'" 
-                 class="bg-white rounded-lg border p-6 mb-6">
+                 class="card p-6 mb-6">
               <h3 class="text-lg font-semibold text-gray-900 mb-4">Quiz interactif</h3>
               <p class="text-gray-600 mb-4">Répondez aux questions pour valider vos connaissances.</p>
               <button class="px-4 py-2 bg-blue-900 text-white rounded hover:bg-blue-800 transition-colors">
@@ -122,7 +122,7 @@ interface Lesson {
             </div>
 
             <!-- Lesson Description -->
-            <div class="bg-white rounded-lg border p-6">
+            <div class="card p-6">
               <h3 class="text-lg font-semibold text-gray-900 mb-4">Description de la leçon</h3>
               <p class="text-gray-700 leading-relaxed">{{ lesson()?.description }}</p>
             </div>
@@ -131,7 +131,7 @@ interface Lesson {
           <!-- Sidebar -->
           <div class="lg:col-span-1">
             <!-- Progress -->
-            <div class="bg-white rounded-lg border p-4 mb-6">
+            <div class="card p-4 mb-6">
               <h3 class="font-semibold text-gray-900 mb-3">Progression</h3>
               <div class="space-y-2">
                 <div class="flex justify-between text-sm">
@@ -146,7 +146,7 @@ interface Lesson {
             </div>
 
             <!-- Related Lessons -->
-            <div class="bg-white rounded-lg border p-4">
+            <div class="card p-4">
               <h3 class="font-semibold text-gray-900 mb-3">Leçons du cours</h3>
               <div class="space-y-2">
                 <div *ngFor="let relatedLesson of relatedLessons(); trackBy: trackByLessonId" 
