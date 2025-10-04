@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -23,15 +24,18 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadComponent: () => import('./pages/dashboard/dashboard.component').then(m => m.DashboardComponent)
+    loadComponent: () => import('./pages/dashboard/dashboard.component').then(m => m.DashboardComponent),
+    canActivate: [authGuard]
   },
   {
     path: 'subscription',
-    loadComponent: () => import('./pages/subscription/subscription.component').then(m => m.SubscriptionComponent)
+    loadComponent: () => import('./pages/subscription/subscription.component').then(m => m.SubscriptionComponent),
+    canActivate: [authGuard]
   },
   {
     path: 'admin',
-    loadComponent: () => import('./pages/admin/admin.component').then(m => m.AdminComponent)
+    loadComponent: () => import('./pages/admin/admin.component').then(m => m.AdminComponent),
+    canActivate: [authGuard]
   },
   { path: '**', redirectTo: '' }
 ];
